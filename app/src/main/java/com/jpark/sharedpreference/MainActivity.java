@@ -10,6 +10,8 @@ import android.widget.RelativeLayout;
 import android.widget.Switch;
 
 public class MainActivity extends AppCompatActivity {
+
+    private static final String SHARED = "shared.pr";
     EditText edit_email;
     Switch switch_suffle;
     RelativeLayout layout;
@@ -36,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void saveSetting(View view) {
         // Preference 생성
-        SharedPreferences sharedPref = getPreferences(Context.MODE_PRIVATE);
+        SharedPreferences sharedPref = getSharedPreferences(SHARED,Context.MODE_PRIVATE);
         // editor를 가져와서 추가(값을 입력하기위해서는 editor로 가져와야한다)
         SharedPreferences.Editor editor = sharedPref.edit();
 
